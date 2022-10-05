@@ -18,8 +18,7 @@ public class Customer {
     //  Exists only for the sake of JPA. You do not use it directly, so it is designated as protected
     protected Customer() {}
 
-    public Customer(Long id, String firstName, String lastName) {
-        this.id = id;
+    public Customer(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
