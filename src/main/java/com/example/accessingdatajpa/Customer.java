@@ -5,16 +5,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity // indicating that it is a JPA entity
+// Because no @Table annotation exists, it is assumed that this entity is mapped to a table named Customer
 public class Customer {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id // so that JPA recognizes it as the object’s ID
+    @GeneratedValue(strategy = GenerationType.AUTO) // to indicate that the ID should be generated automatically
     private Long id;
     private String firstName;
     private String lastName;
 
-    Customer() {}
+    //  Exists only for the sake of JPA. You do not use it directly, so it is designated as protected
+    protected Customer() {}
 
     public Customer(Long id, String firstName, String lastName) {
         this.id = id;
